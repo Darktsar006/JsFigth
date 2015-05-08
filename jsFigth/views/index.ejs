@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>JavaScript Platformer 1</title>
+
+		<!-- C'est le premier Script a inclure dans la page car nous allons faire du RT, tout au long -->
+		<script src="/socket.io/socket.io.js"></script>
+
+
+		<script type="text/javascript" src="js/chargementImage.js"></script>
+		<script type="text/javascript" src="js/timer.js"></script>
+		<script type="text/javascript" src="js/canvas.js"></script>
+		<script type="text/javascript" src="js/player.js"></script>
+		<script type="text/javascript" src="js/demarrage.js"></script> <!-- Tout le programme est la -->
+		
+		
+		
+
+
+		<style type="text/css">
+			body { font-family: Arial,Helvetica,sans-serif;}
+		</style>
+	</head>
+	<body>
+		<p>
+			Darktsar Exe | Cliquer dans le cadre avec la souris pour entrer en zone de combat. <br />
+	    </p>
+	    
+		<canvas id="canvas" width="900" height="500" style="border: 1px solid black">
+			<p>Your browser does not support the canvas element.</p>
+		</canvas>
+
+		
+
+		<div>
+			<p>
+				<ul>
+					<li> Movement : Pavé Fléché du clavier </li>
+					<li> Punch : Boutton A du clavier </li>
+					<li> Kick : Boutton Z du clavier </li>
+					<li> Special Attaque : Button E du clavier </li>
+					<li> Block : Button Q du clavier  </li>
+				</ul>
+			</p>
+		</div>
+	</body>
+</html>
