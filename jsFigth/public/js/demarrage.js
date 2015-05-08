@@ -28,7 +28,7 @@ function init()
         if(lastDownTarget == canvas) { // Si il a cliquer au préalable avec la souris
             switch(event.keyCode) {
             	case 39: // Droite (Boutton ASCI Pour les touche Keyboard javascript)
-					moveDroite(playe)
+					moveDroite(player1);
 					
             		break;
             	case 37: // Gauche

@@ -29,33 +29,33 @@ function jumPlayer(player){
 }
 
 function moveGauche(player) {
-	if(!player.jumpStatut){
-		player.currentImage = stickmanNormal;	
-		if(player.x > 0){
-			player.x -= 2 * 20;	
-		}else {
-			player.x = 0;
-		}
-	}else{
+	if(player.jumpStatut){ // Dans le cas ou il saute on vas le faire avancé plus vite dans les airs
 		if(player.x > 0){
 			player.x -= 2 * 30;	
 		}else {
 			player.x = 0;
 		}
+	}else{
+		player.currentImage = stickmanNormal;	
+		if(player.x > 0){
+			player.x -= 2 * 20;	
+		}else {
+			player.x = 0;
+		}	
 	}
 }
 
-function moveDroite(playe) {
-	if(!player.jumpStatut){
-		player.currentImage = stickmanNormal;	
+function moveDroite(player) {
+	if(player.jumpStatut){
 		if(player.x < (largeur - 151)){
-			player.x += 2 * 20;
+			player.x += 2 * 30;
 		}else {
 			player.x = largeur - 151;
 		}
 	}else {
+		player.currentImage = stickmanNormal;	
 		if(player.x < (largeur - 151)){
-			player.x += 2 * 30;
+			player.x += 2 * 20;
 		}else {
 			player.x = largeur - 151;
 		}
