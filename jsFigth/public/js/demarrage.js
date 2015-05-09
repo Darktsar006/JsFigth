@@ -4,12 +4,17 @@
 
 // Moi je Go sur du SetInterval et SetTimeout
 
-// Socket.io
-var socket = io();
+
 
 var player1 = Object.create(Player);
 // Bien faire attention si c'est le joueur 1 ou 2 Pour initalisier les coordonnées x,y ki sont par defaut 0,0
 // player2.x = (largeur - 150); au lieu de 0 et player2.currentImage = stickmanNormalG
+// Pour de la factorisons de code on peut declarer les 2 players dans une Tableau, mais je vais d'abord bosser sur des varialbles
+// Differentes
+var player2 = Object.create(Player);
+player2.x = (largeur - 150);
+player2.currentImage = stickmanNormalG;
+
 
 
 var lastDownTarget;
@@ -28,8 +33,7 @@ function init()
         if(lastDownTarget == canvas) { // Si il a cliquer au préalable avec la souris
             switch(event.keyCode) {
             	case 39: // Droite (Boutton ASCI Pour les touche Keyboard javascript)
-					moveDroite(player1);
-					
+					moveDroite(player1);	
             		break;
             	case 37: // Gauche
 					moveGauche(player1);
@@ -99,7 +103,6 @@ function draw()
 	var b = 50
 	context2D.font="30px Georgia";
 	context2D.fillText(secondsLabel, a, b);
-
 
 	context2D.drawImage(player1.currentImage, player1.x, player1.y);
 }

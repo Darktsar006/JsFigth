@@ -31,19 +31,9 @@ server.on('listening', onListening);
 
 // Socket.io
 var io = require('socket.io')(server);
+// Separation Logique du contrôle de socket.io dans un fichier séparer
+var socketEngine = require('../engineFight/socket.js')(io);
 
-io.on('connection', function(socket){
-  console.log('a user connected');
-
-  socket.on('send move', function(data){
-    console.log(data);
-    io.emit('get move', data);
-  });
-
-  socket.on('disconnect', function(){
-    console.log('user disconnected');
-  });
-});
 
 /**
  * Normalize a port into a number, string, or false.

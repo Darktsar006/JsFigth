@@ -9,7 +9,7 @@ var Player = {
 	y : (hauteur - 150),
 	jumpStatut : false,
 	continuJump : false,
-	currentImage : stickmanNormal,
+	currentImage : stickmanNormal
 }
 
 function jumPlayer(player){
@@ -43,6 +43,7 @@ function moveGauche(player) {
 			player.x = 0;
 		}	
 	}
+	realTime(player);
 }
 
 function moveDroite(player) {
@@ -60,4 +61,22 @@ function moveDroite(player) {
 			player.x = largeur - 151;
 		}
 	}
+	realTime(player);
 }
+
+// Phase d'utilisation de Socket.io
+
+// Socket.io
+var socket = io();
+
+function realTime(player){
+	socket.emit('Get Position', { x : player.x, y : player.y });
+	// En Gros c'est les coordonnées que nous devons recuperer pour faire notre mise à jour du côté de tous les utilisateurs.
+
+	socket.on('Receive Position', function (data) {
+		player.x = data.x;
+		player.y = data.y;
+		console.log(data);
+	});
+}
+
