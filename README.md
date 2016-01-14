@@ -25,4 +25,9 @@ Ce projet scolaire, dont le but est de réaliser une simulation d'un jeu de Comb
 
 #### Information Environnement de développement 
 
-IDE : Visual Studio 2013 (Edition Premium - pour ma part).
+IDE : Sublime Text
+
+Pour lancer le projet
+
+Ouvrir un Terminal, se mettre à la racine du dossier, puis tapez
+$./bin/www
